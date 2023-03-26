@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Retângulo_8" data-name="Retângulo 8" width="18" height="18"/>
+    </clipPath>
+  </defs>
+  <g id="Delete" clip-path="url(#clip-path)">
+    <rect id="Retângulo_7" data-name="Retângulo 7" width="18" height="18" fill="transparent"/>
+    <g id="trash-outline" transform="translate(1.12 0.837)">
+      <path id="Caminho_3" data-name="Caminho 3" d="M112,112l.9,11.837a1.335,1.335,0,0,0,1.434,1.184h8.244a1.338,1.338,0,0,0,1.434-1.184L124.9,112" transform="translate(-110.566 -109.633)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="Caminho_4" data-name="Caminho 4" d="M80,112H95.77" transform="translate(-80 -109.633)" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+      <path id="Caminho_5" data-name="Caminho 5" d="M184.358,50.367v-1.48h0a.815.815,0,0,1,.314-.628,1.2,1.2,0,0,1,.761-.259h3.584a1.2,1.2,0,0,1,.761.259.815.815,0,0,1,.314.628h0v1.48m-2.867,2.367V61.02M184,52.735l.358,8.286m6.093-8.286-.358,8.286" transform="translate(-179.341 -48)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

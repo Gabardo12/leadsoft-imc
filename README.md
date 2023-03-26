@@ -9,7 +9,9 @@ IMC app para Leadsoft
 
 :heavy_check_mark: Auth
 
-:heavy_check_mark: Design simples
+:heavy_check_mark: Responsivo
+
+:heavy_check_mark: Clear Design
 
 
 # Pré-requisitos

@@ -1,3 +1,7 @@
+/* GLOBAL */
+    body {
+        font-family: Helvetica, sans-serif;
+    }
 /* AUTH */
     .auth-wrapper {
         height: 100vh;
@@ -53,4 +57,138 @@
     }
     .auth-btn:focus {
         background-color: #fff;
+    }
+
+/* PEOPLE */
+    .main-section {
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        background-image: url('../img/background/background.png');
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: 35%;
+    }
+    .main-wrapper {
+        max-width: 1200px;
+        width: 100%;
+        padding: 1.5rem;
+    }
+    .main-header {
+        display: flex;
+        justify-content: space-between;
+    }
+    .header-logo {
+        width: 100px;
+    }
+    .logout-button {
+        color: #707070;
+        background-color: transparent;
+        border: 1px solid #707070;
+        border-radius: 7.5px;
+        padding: .3rem 1rem;
+        height: 39px;
+        width: 100px;
+        transition: .3s;
+    }
+    .logout-button:hover {
+        background-color: #fff;
+        border-color: #FAC8C8;
+        filter: drop-shadow(0px 0px 1px #FAC8C8);
+    }
+    .custom-button {
+        color: #707070;
+        background-color: transparent;
+        border: 1px solid #707070;
+        border-radius: 7.5px;
+        padding: .3rem 1rem;
+        height: 39px;
+        width: 100px;
+        transition: .3s;
+    }
+    .custom-button:hover {
+        background-color: #fff;
+        border-color: #313131;
+        filter: drop-shadow(0px 0px 1px #313131);
+        color: #000;
+    }
+    .custom-card {
+        background-color: #fff;
+        border: 1px solid #707070;
+        border-radius: 5px;
+        padding: 1rem 2rem;
+    }
+    .resume-card {
+        margin-top: 65px;
+        min-height: 152px;
+    }
+    .resume-card p {
+        color: #707070;
+        text-align: justify;
+        font-size: 15px;
+    }
+    .resume-card p:last-child {
+        text-align: center;
+    }
+    .table-actions-wrapper {
+        display: flex;
+        justify-content: end;
+    }
+    .table-actions-wrapper {
+        margin-top: 29px;
+        margin-bottom: 29px;
+    }
+    .table-card {
+        padding: 2rem 3rem;
+        height: 587px;
+    }
+    .peoples-table {
+        width: 100%;
+        color: #707070;
+    }
+    .table-action-btn {
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+    }
+    .peoples-table thead {
+        border-bottom: 1px solid #707070;
+    }
+    .peoples-table thead tr th {
+        font-weight: 400;
+        padding-bottom: 1.4rem;
+        font-size: 18px;
+    }
+    .peoples-table thead tr th:last-child {
+        width: 100px;
+    }
+    .peoples-table thead tr th:not(:first-child) {
+        text-align: center;
+    }
+    .peoples-table tbody tr td {
+        font-weight: 300;
+        padding: 5px 0px;
+        font-size: 16px;
+    }
+    .peoples-table tbody tr:first-child td {
+        padding-top: 1.5rem;
+        text-overflow: ellipsis;
+        overflow: hidden; 
+        max-width: 150px;
+        height: 1.2em; 
+        white-space: nowrap;
+    }
+    .peoples-table tbody tr td:last-child button {
+        width: 49px;
+    }
+    .peoples-table tbody tr td:not(:first-child) {
+        text-align: center;
+    }
+    .mobile-swipeHelper {
+        display: none;
+        width: 50px;
     }
