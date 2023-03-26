@@ -5,8 +5,8 @@ import Insert from '../../components/Modals/Insert';
 
 const index = () => {
   return (
-    <div>
-      peoples index
+    <div className='main-wrapper'>
+      
     </div>
   );
 };

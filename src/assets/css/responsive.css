@@ -1,0 +1,27 @@
+/* MEDIA 4K */
+@media screen and (max-width: 2556px) {}
+
+/* MEDIA LAPTOP L */
+@media screen and (max-width: 1440px) {}
+
+/* MEDIA LAPTOP */
+@media screen and (max-width: 1024px) {}
+
+/* MEDIA TABLET */
+@media screen and (max-width: 820px) {
+    .auth-wrapper {
+        background-image: url('../img/background/background-logo.png');
+        background-position: 50% 10%;
+    }
+}
+@media screen and (max-width: 768px) {}
+
+/* MEDIA MOBILE L */
+@media screen and (max-width: 480px) {
+}
+
+/* MEDIA MOBILE M */
+@media screen and (max-width: 375px) {}
+
+/* MEDIA MOBILE S */
+@media screen and (max-width: 320px) {}
