@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import Confirm from '../../components/Modals/Confirm';
 import Edit from '../../components/Modals/Edit';
 import Insert from '../../components/Modals/Insert';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
 
 
 
@@ -16,6 +14,12 @@ import editIcon from "../../assets/img/icon/edit.svg";
 import swipeHelper from "../../assets/img/icon/swipe-helper.gif";
 
 const index = () => {
+  
+  const handleLogout = () => {
+    localStorage.clear();
+    window.location.reload();
+  };
+
   return (
     <section className='main-section'>
       <div className='main-wrapper'>
@@ -23,6 +27,7 @@ const index = () => {
           <img src={ headerLogo } alt="" />
           <button
             className='logout-button'
+            onClick={handleLogout}
             >
               Logout
           </button>
