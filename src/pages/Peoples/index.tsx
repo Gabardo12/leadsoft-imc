@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Confirm from '../../components/Modals/Confirm';
 import Edit from '../../components/Modals/Edit';
 import Insert from '../../components/Modals/Insert';
+import api from '../../services/api';
 
 
 
@@ -20,6 +21,23 @@ const index = () => {
     window.location.reload();
   };
 
+  const [peoples, setPeoples] = useState([])
+  const getPeoples = async() => {
+    try {
+      const response = await api.get('/People/IMC');
+      const data = response.data;
+      setPeoples(data);
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  useEffect(() => {
+    getPeoples();
+  }, []);
+  function calculateIMC(Weigth, Height){
+    const imc = Weigth / (Height * Height);
+    return imc.toFixed(1);
+  }
   return (
     <section className='main-section'>
       <div className='main-wrapper'>
@@ -55,32 +73,21 @@ const index = () => {
               </tr>
             </thead> 
             <tbody>
-              <tr>
-                <td>João Augusto Silva</td>
-                <td>22</td>
-                <td>22</td>
-                <td>22</td>
-                <td>22</td>
-                <td>
-                  <button className='table-action-btn'>
-                    <img src={ deleteIcon } alt="" />
-                  </button>
-                  <button className='table-action-btn'>
-                    <img src={ editIcon } alt="" />
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>João Augusto Silva</td>
-                <td>22</td>
-                <td>22</td>
-                <td>22</td>
-                <td>22</td>
-                <td>
-                  <Confirm />
-                  <Edit />
-                </td>
-              </tr>
+              {peoples.length === 0 ? <tr><td>Carregando...</td></tr>: (
+                peoples.map((people) =>(
+                  <tr key={ people.Id }>
+                    <td>{ people.FullName }</td>
+                    <td>{ people.Age }</td>
+                    <td>{ people.Height }</td>
+                    <td>{ people.Weigth }</td>
+                    <td id={`person-${people.Id}`}>{ calculateIMC(people.Weigth, people.Height) }</td>
+                    <td>
+                      <Confirm />
+                      <Edit />
+                    </td>
+                  </tr>
+                ))
+              )}
             </tbody>
             <tfoot>
               <tr>

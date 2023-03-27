@@ -40,7 +40,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 		})
 			.then((response) => {
 				const { Authorization } = response.data;
-				// console.log("--- Authorization ---", Authorization);
+				console.log("--- Authorization ---", Authorization);
 				setIsSigned(true);
 				localStorage.setItem("@leadsoft:Authorization", Authorization);
 				api.defaults.headers.common[
