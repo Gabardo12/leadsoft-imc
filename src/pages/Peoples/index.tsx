@@ -16,10 +16,6 @@ import editIcon from "../../assets/img/icon/edit.svg";
 import swipeHelper from "../../assets/img/icon/swipe-helper.gif";
 
 const index = () => {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
   return (
     <section className='main-section'>
       <div className='main-wrapper'>
@@ -76,12 +72,8 @@ const index = () => {
                 <td>22</td>
                 <td>22</td>
                 <td>
-                  <button className='table-action-btn'>
-                    <img src={ deleteIcon } alt="" />
-                  </button>
-                  <button className='table-action-btn'>
-                    <img src={ editIcon } alt="" />
-                  </button>
+                  <Confirm />
+                  <Edit />
                 </td>
               </tr>
             </tbody>

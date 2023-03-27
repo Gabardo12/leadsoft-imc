@@ -22,19 +22,57 @@ function index() {
         onHide={handleClose}
         backdrop="static"
         keyboard={false}
+        className="custom-modal"
       >
         <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
+          <h4>Incluir usuário</h4>
         </Modal.Header>
+        <hr />
         <Modal.Body>
-          I will not close if you click outside me. Don't even try to press
-          escape key.
+          <div className='modal-top-wrapper'>
+            <p>Insira suas informações pessoais abaixo para calcular
+            seu IMC.</p>
+          </div>
+          <div className='modal-body-wrapper'>
+            <form>
+              <div className='form-group'>
+                <input 
+                  className='custom-input'
+                  placeholder='Nome'
+                  />
+              </div>
+              <div className='form-group'>
+                <input 
+                  className='custom-input'
+                  placeholder='Sobrenome'
+                  />
+              </div>
+              <div className='form-group'>
+                <input 
+                  className='custom-input'
+                  placeholder='Data de Nascimento'
+                  />
+              </div>
+              <div className='small-form-group'>
+                <input 
+                  className='custom-input'
+                  placeholder='Altura'
+                  />
+                  <input 
+                  className='custom-input'
+                  placeholder='Peso'
+                  />
+              </div>
+            </form>
+          </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary">Understood</Button>
+          <Button variant="primary" onClick={handleClose} className="custom-button-cancel">
+              Cancelar
+            </Button>
+            <Button variant="primary" onClick={handleClose} className="custom-button">
+              Incluir
+            </Button>
         </Modal.Footer>
       </Modal>
     </>
