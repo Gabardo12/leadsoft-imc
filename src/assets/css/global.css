@@ -160,6 +160,8 @@
     }
     .table-footer {
         margin-top: auto;
+        display: flex;
+        justify-content: space-between;
     }
     .peoples-table {
         width: 100%;

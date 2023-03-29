@@ -6,7 +6,6 @@ interface PeopleProps{
 }
 
 const index = ({peoplesPerPage, totalPeoples, paginate }:PeopleProps) => {
-    console.log(totalPeoples);
     const pageNumbers = [];
 
     for(let i = 1; i <= Math.ceil(totalPeoples / peoplesPerPage); i++){

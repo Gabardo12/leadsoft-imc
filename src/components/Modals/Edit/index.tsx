@@ -26,6 +26,21 @@ function index({ data }:PeopleProps) {
   const [isWeigth, setWeigth] = useState(data.Weigth);
   const [isHeight, setHeight] = useState(data.Height);
 
+  function handleValidation(){
+    if (isHeight?.length <= 5) {
+      if (isWeigth?.length <= 7) {  
+        handleSave();
+      }else{
+        toast.error("Numeros de caracteres do Peso não confere.",{
+          position: toast.POSITION.TOP_CENTER
+        });
+      }
+    }else{
+      toast.error("Numeros de caracteres da Altura não confere.",{
+        position: toast.POSITION.TOP_CENTER
+      });
+    }
+  }
   function handleSave(id){
     try {
       api.put(`/People/${id}`, {

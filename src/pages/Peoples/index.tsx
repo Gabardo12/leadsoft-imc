@@ -82,15 +82,9 @@ const index = () => {
 
           </table>
           <div className='table-footer'>
-              <tr>
-                <td>
-                  <Pagination peoplesPerPage={ peoplesPerPage } totalPeoples={ peoplesTotal } paginate={paginate}/>
-                </td>
-                <td>
-                  <img className='mobile-swipeHelper' src={ swipeHelper } alt="" />
-                </td>
-              </tr>
-            </div>
+              <Pagination peoplesPerPage={ peoplesPerPage } totalPeoples={ peoplesTotal } paginate={paginate}/>
+              <img className='mobile-swipeHelper' src={ swipeHelper } alt="" />
+          </div>
         </div>
       </div>
     </section>

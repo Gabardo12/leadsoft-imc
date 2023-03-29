@@ -17,6 +17,21 @@ function index() {
   const [isWeigth, setWeigth] = useState();
   const [isHeight, setHeight] = useState();
 
+  function handleValidation(){
+    if (isHeight?.length <= 5) {
+      if (isWeigth?.length <= 7) {  
+        handleSave();
+      }else{
+        toast.error("Numeros de caracteres do Peso não confere.",{
+          position: toast.POSITION.TOP_CENTER
+        });
+      }
+    }else{
+      toast.error("Numeros de caracteres da Altura não confere.",{
+        position: toast.POSITION.TOP_CENTER
+      });
+    }
+  }
   function handleSave(){
     try {
       api.post(`/People`, {
@@ -112,11 +127,11 @@ function index() {
         </Modal.Body>
         <Modal.Footer>
           <Button variant="primary" onClick={handleClose} className="custom-button-cancel">
-              Cancelar
-            </Button>
-            <Button variant="primary" onClick={() => handleSave()} className="custom-button">
-              Incluir
-            </Button>
+            Cancelar
+          </Button>
+          <Button variant="primary" onClick={() => handleValidation()} className="custom-button">
+            Incluir
+          </Button>
         </Modal.Footer>
       </Modal>
     </>
