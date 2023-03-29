@@ -280,3 +280,20 @@
     .Toastify__toast-container {
         width: 40%;
     }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+    .button-form-group {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+    .button-form-group button:first-child {
+        margin-right: 5px;
+    }

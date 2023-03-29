@@ -28,7 +28,7 @@ const index = () => {
       const data = response.data;
       setPeoples(data);
     } catch (error) {
-      console.log(error)
+      // console.log(error)
     }
   }
   useEffect(() => {
@@ -90,7 +90,7 @@ const index = () => {
                     <td id={`person-${people.Id}`}>{ calculateIMC(people.Weigth, people.Height) }</td>
                     <td>
                       <Edit data={ people }/>
-                      <Confirm />
+                      <Confirm data={ people }/>
                     </td>
                   </tr>
                 ))

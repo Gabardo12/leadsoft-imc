@@ -49,7 +49,10 @@ function index({ data }:PeopleProps) {
         }
       });
     } catch (error) {
-      // console.log(error)
+      console.log(error)
+      toast.error("Erro, atualize a pagina tente novamente!",{
+        position: toast.POSITION.TOP_CENTER
+      })
     }
   }
   function formatBirth(Birth){
@@ -123,12 +126,14 @@ function index({ data }:PeopleProps) {
                 <input 
                   className='custom-input'
                   placeholder='Altura (M)'
+                  type='number'
                   value={ isHeight }
                   onChange={(e) => setHeight(e.target.value)}
                   />
                   <input 
                   className='custom-input'
                   placeholder='Peso (Kg)'
+                  type='number'
                   value={ isWeigth }
                   onChange={(e) => setWeigth(e.target.value)}
                   />
