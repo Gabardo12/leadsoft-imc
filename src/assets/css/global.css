@@ -155,6 +155,11 @@
     .table-card {
         padding: 2rem 3rem;
         height: 587px;
+        display: flex;
+        flex-direction: column;
+    }
+    .table-footer {
+        margin-top: auto;
     }
     .peoples-table {
         width: 100%;

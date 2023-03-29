@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Confirm from '../../components/Modals/Confirm';
-import Edit from '../../components/Modals/Edit';
 import Insert from '../../components/Modals/Insert';
 import api from '../../services/api';
+import PeoplesList from '../../components/PeoplesList'
+import Pagination from '../../components/Pagination';
 
 
 
@@ -15,13 +15,17 @@ import editIcon from "../../assets/img/icon/edit.svg";
 import swipeHelper from "../../assets/img/icon/swipe-helper.gif";
 
 const index = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [peoplesPerPage, setPeoplesPerPage] = useState(9);
+  const indexOfLastPeople = currentPage * peoplesPerPage;
+  const indexOfFirstPeople = indexOfLastPeople - peoplesPerPage;
+  const [peoples, setPeoples] = useState([])
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
   
   const handleLogout = () => {
     localStorage.clear();
     window.location.reload();
   };
-
-  const [peoples, setPeoples] = useState([])
   const getPeoples = async() => {
     try {
       const response = await api.get('/People');
@@ -31,19 +35,13 @@ const index = () => {
       // console.log(error)
     }
   }
+
   useEffect(() => {
     getPeoples();
   }, []);
-  function calculateIMC(Weigth, Height){
-    const imc = Weigth / (Height * Height);
-    return imc.toFixed(1);
-  }
-  function calculateAge(Birth){
-    const birthDate = new Date(Birth);
-    const ageDifMs = Date.now() - birthDate.getTime();
-    const ageDate = new Date(ageDifMs);
-    return Math.abs(ageDate.getUTCFullYear() - 1970);
-  }
+
+  const currentPeoples = peoples.slice(indexOfFirstPeople, indexOfLastPeople);
+  const peoplesTotal = peoples.length;
   // 
   return (
     <section className='main-section'>
@@ -79,31 +77,20 @@ const index = () => {
                 <th>Ações</th>
               </tr>
             </thead> 
-            <tbody>
-              {peoples.length === 0 ? <tr><td>Carregando...</td></tr>: (
-                peoples.map((people) =>(
-                  <tr key={ people.Id }>
-                    <td>{ people.Name } { people.Surname }</td>
-                    <td>{ calculateAge(people.DateOfBirth) }</td>
-                    <td>{ people.Height }</td>
-                    <td>{ people.Weigth }</td>
-                    <td id={`person-${people.Id}`}>{ calculateIMC(people.Weigth, people.Height) }</td>
-                    <td>
-                      <Edit data={ people }/>
-                      <Confirm data={ people }/>
-                    </td>
-                  </tr>
-                ))
-              )}
-            </tbody>
-            <tfoot>
+            
+            <PeoplesList data={ currentPeoples } />
+
+          </table>
+          <div className='table-footer'>
               <tr>
+                <td>
+                  <Pagination peoplesPerPage={ peoplesPerPage } totalPeoples={ peoplesTotal } paginate={paginate}/>
+                </td>
                 <td>
                   <img className='mobile-swipeHelper' src={ swipeHelper } alt="" />
                 </td>
               </tr>
-            </tfoot>
-          </table>
+            </div>
         </div>
       </div>
     </section>
