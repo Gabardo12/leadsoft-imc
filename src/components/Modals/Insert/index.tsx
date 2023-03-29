@@ -45,6 +45,7 @@ function index() {
         toast.success("Usuário adicionado com sucesso!",{
           position: toast.POSITION.TOP_CENTER
         });
+        window.location.reload();
       }).catch((error) =>{
         console.log(error.response);
         if(error.response.data.status == 400){
