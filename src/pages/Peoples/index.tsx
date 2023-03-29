@@ -24,7 +24,7 @@ const index = () => {
   const [peoples, setPeoples] = useState([])
   const getPeoples = async() => {
     try {
-      const response = await api.get('/People/IMC');
+      const response = await api.get('/People');
       const data = response.data;
       setPeoples(data);
     } catch (error) {
@@ -38,6 +38,13 @@ const index = () => {
     const imc = Weigth / (Height * Height);
     return imc.toFixed(1);
   }
+  function calculateAge(Birth){
+    const birthDate = new Date(Birth);
+    const ageDifMs = Date.now() - birthDate.getTime();
+    const ageDate = new Date(ageDifMs);
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
+  }
+  // 
   return (
     <section className='main-section'>
       <div className='main-wrapper'>
@@ -66,8 +73,8 @@ const index = () => {
               <tr>
                 <th>Nome Completo</th>
                 <th>Idade</th>
-                <th>Altura</th>
-                <th>Peso</th>
+                <th>Altura (M)</th>
+                <th>Peso (Kg)</th>
                 <th>IMC</th>
                 <th>Ações</th>
               </tr>
@@ -76,14 +83,14 @@ const index = () => {
               {peoples.length === 0 ? <tr><td>Carregando...</td></tr>: (
                 peoples.map((people) =>(
                   <tr key={ people.Id }>
-                    <td>{ people.FullName }</td>
-                    <td>{ people.Age }</td>
+                    <td>{ people.Name } { people.Surname }</td>
+                    <td>{ calculateAge(people.DateOfBirth) }</td>
                     <td>{ people.Height }</td>
                     <td>{ people.Weigth }</td>
                     <td id={`person-${people.Id}`}>{ calculateIMC(people.Weigth, people.Height) }</td>
                     <td>
+                      <Edit data={ people }/>
                       <Confirm />
-                      <Edit />
                     </td>
                   </tr>
                 ))

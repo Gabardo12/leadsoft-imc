@@ -274,3 +274,9 @@
     .modal-top-wrapper b {
         text-align: center;
     }
+    .editmodal-inputs p {
+        margin-bottom: 0px;
+    }
+    .Toastify__toast-container {
+        width: 40%;
+    }

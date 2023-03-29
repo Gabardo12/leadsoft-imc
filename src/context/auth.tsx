@@ -49,7 +49,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 			})
 			.catch((error) => {
 				const { message } = error.response.data;
-				console.log(error, message);
+				// console.log(error, message);
 				alert(message);
 			})
 			.finally(() => {
