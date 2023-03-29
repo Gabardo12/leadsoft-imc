@@ -1,5 +1,5 @@
 # leadsoft-imc
-IMC app para Leadsoft
+Aplicação IMC para Leadsoft
 
 # Detalhes
 
@@ -7,7 +7,7 @@ IMC app para Leadsoft
 
 :heavy_check_mark: Adicionar, remover e editar atributos de usuários
 
-:heavy_check_mark: Auth
+:heavy_check_mark: Autentificação
 
 :heavy_check_mark: Responsivo
 
