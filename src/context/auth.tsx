@@ -43,7 +43,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 				// alert("O token para autorização está no console.");
 				console.log("--- Authorization --- \n", Authorization, "\n \n \n");
 				// console.log("--- Link --- \n", "http://peopletest.leadsoft.inf.br/swagger/index.html", "\n \n");
-				console.log("Após autorizar, recarregue a pagina.", "\n \n \n");
+				// console.log("Após autorizar, recarregue a pagina.", "\n \n \n");
 				setIsSigned(true);
 				localStorage.setItem("@leadsoft:Authorization", Authorization);
 				api.defaults.headers.common[
