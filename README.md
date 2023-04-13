@@ -23,7 +23,7 @@ Aplicação IMC para Leadsoft
 
 No terminal, clone o projeto:
 ```
-git clone https://github.com/Gabardo12/leadsoft-imc
+git clone https://github.com/matheusgabardo/leadsoft-imc
 ```
 
 Acesse o repositório com:
